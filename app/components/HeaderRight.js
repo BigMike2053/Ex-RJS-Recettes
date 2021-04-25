@@ -6,7 +6,9 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const HeaderRight = () => {
     return (
         <View>
-            <Icon name="plus-circle" size={25} color="blue"/>
+            <Icon 
+            name="plus-circle" size={25} color="blue"
+            />
         </View>
     )
 } 
