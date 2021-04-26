@@ -16,9 +16,19 @@ export default function Details({ route, navigation }) {
             <Text style={styles.CatStyle}>{route.params.Catégorie}</Text>
             <Image source={{ uri: route.params.Lien }}
                 style={styles.ImageStyle}/>
-            <Text style={styles.NomStyle}>{route.params.Nom}</Text>
-            <Text style={styles.IngStyle}>Ingrédients : {route.params.Ingrédients}</Text>
-            <Text style={styles.DesStyle}>Description : {route.params.Description}</Text>
+            <Text style={styles.NomStyle}>{route.params.Nom}</Text>            
+            <View style={styles.container}>
+                <View style={styles.alignStyle}>
+                    <Icon name="apple" size={34} color="green"/>
+                    <Text style={styles.IngStyle}>Ingrédients :</Text>
+                </View>
+                    <Text>{route.params.Ingrédients}</Text>
+                <View style={styles.alignStyle}>
+                    <Icon name="spoon" size={34} color="grey"/>
+                    <Text style={styles.DesStyle}>Description :</Text>
+                </View>
+                <Text>{route.params.Description}</Text>
+            </View>
         </View>
     )
 }
@@ -28,30 +38,51 @@ const styles=StyleSheet.create({
         backgroundColor: "#f0faff"
     },
 
+    container:{
+        padding: 15,
+    },
+
     CatStyle:{
-        fontSize: 40,
-        padding: 10,
-        color: "#003c62"
+        fontSize: 35,
+        fontWeight:"bold",
+        color: "#003c62",
+        textAlign:"center",
     },
 
     NomStyle:{
-        fontSize: 30,
+        textAlign:"center",
+        justifyContent:"center",
+        width:325,
+        fontSize: 20,
         backgroundColor:"#003c62",
         color:"#ededed",
-        padding: 15
+        borderTopRightRadius: 40,
+        borderBottomRightRadius: 40,
+        padding: 20,
     },
 
     IngStyle:{
         fontSize:20,
+        fontWeight:"bold",
         padding: 15,
+
     },
 
     DesStyle:{
-        padding: 15
+        fontSize:20,
+        fontWeight:"bold",
+        padding:15,
     },
 
     ImageStyle:{
         width: 400,
         height: 200,
-    }
+    },
+
+    alignStyle:{
+        display:'flex',
+        flexDirection:'row',
+        alignItems:"center",
+        paddingTop: 10,
+    },
 })

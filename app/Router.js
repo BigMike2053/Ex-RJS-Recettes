@@ -3,7 +3,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import Home from './screens/Home';
 import Details from './screens/Details';
-import HeaderRight from './components/HeaderRight';
 import { Icon } from 'react-native-elements'
 import setmodalOpen from './screens/Home'
 
@@ -15,11 +14,12 @@ export default Router = () => {
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Home">
                 <Stack.Screen name="Recettes" component={Home} options={{
-                    headerRight: ()=> (
-                        <Icon 
-                            name="add" 
-                            size={25} 
-                            color="blue"
+                    headerRight: () => (
+                        <Icon
+                            name="add-circle"
+                            size={25}
+                            color="#003d63"
+                            onPress={() => setmodalOpen(true)}
                         />
                     ),
                 }}
@@ -27,7 +27,7 @@ export default Router = () => {
                 <Stack.Screen name="Details" component={Details} />
             </Stack.Navigator>
         </NavigationContainer>
-        
+
     );
 };
 
