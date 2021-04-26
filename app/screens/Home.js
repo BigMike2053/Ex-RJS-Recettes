@@ -78,7 +78,6 @@ return (
                         />
                     </TouchableOpacity>
                 )}
-                // suhfuoshugosdhgodf
             />
         </View>
     </View>
